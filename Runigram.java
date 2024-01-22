@@ -166,7 +166,7 @@ public class Runigram {
 				scaledImage[i - 1][j - 1] = image[(int)((i - 1) * widthScaleFactor)][(int)((j - 1) * heightScaleFactor)];
 			}
 		}
-		return transpose(scaledImage);
+		return scaledImage;
 	}
 	
 	/**

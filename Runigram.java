@@ -11,7 +11,7 @@ public class Runigram {
 		
 		// Tests the reading and printing of an image:	
 		Color[][] tinypic = read("tinypic.ppm");
-		//print(tinypic);
+		print(tinypic);
 
 		// Creates an image which will be the result of various 
 		// image processing operations:
@@ -27,9 +27,9 @@ public class Runigram {
 		//// Write here whatever code you need in order to test your work.
 		//// You can reuse / overide the contents of the imageOut array.
 
-		imageOut = scaled(tinypic, 5, 3);
-		System.out.println();
-		print(imageOut);
+		//imageOut = scaled(tinypic, 5, 3);
+		//System.out.println();
+		//print(imageOut);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
@@ -79,6 +79,7 @@ public class Runigram {
 			}
 			System.out.println(); // Skips to a new line
 		}
+		System.out.println(); // Skips to a new line
 	}
 	
 	/**
@@ -142,14 +143,14 @@ public class Runigram {
 	 * The image is scaled (resized) to have the given width and height.
 	 */
 	public static Color[][] scaled(Color[][] image, int width, int height) {
-		Color[][] scaledImage = new Color[height][width];
-		int h0 = image.length; // Gets the width of the original image
-		int w0 = image[0].length; // Gets the height of the original image
+		Color[][] scaledImage = new Color[width][height];
+		int w0 = image.length; // Gets the width of the original image
+		int h0 = image[0].length; // Gets the height of the original image
 		double widthScaleFactor = (double) w0 / width; 
 		for (int i = 1; i <= width; i++) {
 			double heightScaleFactor = (double) h0 / height;
 			for (int j = 1; j <= height; j++) {
-				scaledImage[i - 1][j - 1] = image[(int)((i - 1) * heightScaleFactor)][(int)((j - 1) * widthScaleFactor)];
+				scaledImage[i - 1][j - 1] = image[(int)((i - 1) * widthScaleFactor)][(int)((j - 1) * heightScaleFactor)];
 			}
 		}
 		return scaledImage;

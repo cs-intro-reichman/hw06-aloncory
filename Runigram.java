@@ -27,7 +27,7 @@ public class Runigram {
 		//// Write here whatever code you need in order to test your work.
 		//// You can reuse / overide the contents of the imageOut array.
 
-		//imageOut = scaled(tinypic, 5, 3);
+		//imageOut = scaled(tinypic, 2, 2);
 		//System.out.println();
 		//print(imageOut);
 	}

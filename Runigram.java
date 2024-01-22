@@ -150,8 +150,8 @@ public class Runigram {
 		double heightScaleFactor = (double) h0 / height;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
-				int i_indnex = Math.min((int)((i + 1) * widthScaleFactor) - 1,width - 1);
-				int j_index = Math.min((int)((j + 1) * heightScaleFactor) - 1,height - 1);
+				int i_indnex = (int)((i + 1) * widthScaleFactor) - 1;
+				int j_index = (int)((j + 1) * heightScaleFactor) - 1;
 				scaledImage[i][j] = image[i_indnex][j_index];
 			}
 		}

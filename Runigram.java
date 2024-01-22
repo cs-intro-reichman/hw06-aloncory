@@ -10,26 +10,26 @@ public class Runigram {
 		//// Hide / change / add to the testing code below, as needed.
 		
 		// Tests the reading and printing of an image:	
-		//Color[][] tinypic = read("tinypic.ppm");
-		//print(tinypic);
+		Color[][] tinypic = read("tinypic.ppm");
+		print(tinypic);
 
 		// Creates an image which will be the result of various 
 		// image processing operations:
-		//Color[][] imageOut;
+		Color[][] imageOut;
 
 		// Tests the horizontal flipping of an image:
-		//imageOut = flippedHorizontally(tinypic);
-		//System.out.println();
-		//print(imageOut);
+		imageOut = flippedHorizontally(tinypic);
+		System.out.println();
+		print(imageOut);
 
 		
 		
 		//// Write here whatever code you need in order to test your work.
 		//// You can reuse / overide the contents of the imageOut array.
 
-		//imageOut = scaled(tinypic, 2, 2);
-		//System.out.println();
-		//print(imageOut);
+		imageOut = scaled(tinypic, 3, 5);
+		System.out.println();
+		print(imageOut);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
@@ -111,19 +111,6 @@ public class Runigram {
 		}
 		return flippedImage;
 	}
-
-	/** Returns an image which is the transposed verition of the given image */
-	public static Color[][] transpose(Color[][] image){
-		int numRows = image[0].length;
-		int numCols = image.length;
-		Color[][] trnasposedImage = new Color[numRows][numCols];
-		for (int i = 0; i < numRows; i++) { 
-			for (int j = 0; j < numCols; j++) {
-				trnasposedImage[i][j] = image[j][i];
-			}
-		}
-		return trnasposedImage;
-	}
 	
 	// Computes the luminance of the RGB values of the given pixel, using the formula 
 	// lum = 0.299 * r + 0.587 * g + 0.114 * b, and returns a Color object consisting
@@ -156,14 +143,14 @@ public class Runigram {
 	 * The image is scaled (resized) to have the given width and height.
 	 */
 	public static Color[][] scaled(Color[][] image, int width, int height) {
-		Color[][] scaledImage = new Color[width][height];
+		Color[][] scaledImage = new Color[height][width];
 		int w0 = image.length; // Gets the width of the original image
 		int h0 = image[0].length; // Gets the height of the original image
 		double widthScaleFactor = (double) w0 / width; 
 		double heightScaleFactor = (double) h0 / height;
-		for (int i = 1; i <= width; i++) {
-			for (int j = 1; j <= height; j++) {
-				scaledImage[i - 1][j - 1] = image[(int)((i - 1) * widthScaleFactor)][(int)((j - 1) * heightScaleFactor)];
+		for (int i = 1; i <= height; i++) {
+			for (int j = 1; j <= width; j++) {
+				scaledImage[i - 1][j - 1] = image[(int)((i - 1) * heightScaleFactor)][(int)((j - 1) * widthScaleFactor)];
 			}
 		}
 		return scaledImage;

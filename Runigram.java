@@ -72,7 +72,7 @@ public class Runigram {
 	// This function is used for debugging purposes.
 	// For example, to check that some image processing function works correctly,
 	// we can apply the function and then use this function to print the resulting image.
-	private static void print(Color[][] image) {
+	public static void print(Color[][] image) {
 		for (Color[] rowOfColors: image) {
 			for (Color color: rowOfColors) {
 				print(color); // Prints the color

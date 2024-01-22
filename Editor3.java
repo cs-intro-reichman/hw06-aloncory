@@ -13,12 +13,12 @@ import java.awt.Color;
 public class Editor3 {
 
 	public static void main (String[] args) {
-		String source = args[0];
-		String target = args[1];
-		int n = Integer.parseInt(args[2]);
+		String source = args[0]; // Gets the PPM file of a source image
+		String target = args[1]; // Gets the PPM file of a target image
+		int n = Integer.parseInt(args[2]); // Gets the number of morphing steps
 		Color[][] sourceImage = Runigram.read(source);
 		Color[][] targetImage = Runigram.read(target);
-		Runigram.setCanvas(sourceImage);
-		Runigram.morph(sourceImage, targetImage, n);
+		Runigram.setCanvas(sourceImage); // Creates a canvas for displaying the images
+		Runigram.morph(sourceImage, targetImage, n); // Morphs the source image into the target image, gradually, in n steps.
 	}
 }

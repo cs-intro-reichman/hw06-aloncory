@@ -10,7 +10,7 @@ import java.awt.Color;
 public class Editor2 {
 
 	public static void main (String[] args){
-		String fileName = args[0];
+		String fileName = args[0]; // Gets the PPM file of a source image
 		int width = Integer.parseInt(args[1]);
 		int height = Integer.parseInt(args[2]);
 		Color[][] imageIn = Runigram.read(fileName);

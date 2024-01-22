@@ -111,6 +111,19 @@ public class Runigram {
 		}
 		return flippedImage;
 	}
+
+	/** Returns an image which is the transposed verition of the given image */
+	public static Color[][] transpose(Color[][] image){
+		int numRows = image[0].length;
+		int numCols = image.length;
+		Color[][] trnasposedImage = new Color[numRows][numCols];
+		for (int i = 0; i < numRows; i++) { 
+			for (int j = 0; j < numCols; j++) {
+				trnasposedImage[i][j] = image[j][i];
+			}
+		}
+		return trnasposedImage;
+	}
 	
 	// Computes the luminance of the RGB values of the given pixel, using the formula 
 	// lum = 0.299 * r + 0.587 * g + 0.114 * b, and returns a Color object consisting
@@ -153,7 +166,7 @@ public class Runigram {
 				scaledImage[i - 1][j - 1] = image[(int)((i - 1) * widthScaleFactor)][(int)((j - 1) * heightScaleFactor)];
 			}
 		}
-		return flippedHorizontally(flippedHorizontally(scaledImage));
+		return transpose(scaledImage);
 	}
 	
 	/**

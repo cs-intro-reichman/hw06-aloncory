@@ -15,12 +15,12 @@ public class Runigram {
 
 		// Creates an image which will be the result of various 
 		// image processing operations:
-		//Color[][] imageOut;
+		Color[][] imageOut;
 
 		// Tests the horizontal flipping of an image:
-		//imageOut = flippedHorizontally(tinypic);
-		//System.out.println();
-		//print(imageOut);
+		imageOut = flippedHorizontally(tinypic);
+		System.out.println();
+		print(imageOut);
 
 		
 		

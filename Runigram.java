@@ -144,11 +144,10 @@ public class Runigram {
 	 */
 	public static Color[][] scaled(Color[][] image, int width, int height) {
 		Color[][] scaledImage = new Color[height][width];
-		int h0 = image.length; // Gets the width of the original image
-		int w0 = image[0].length; // Gets the height of the original image
+		int h0 = image.length; // Gets the height of the original image
+		int w0 = image[0].length; // Gets the width of the original image
 		double widthScaleFactor = (double) w0 / width; 
 		double heightScaleFactor = (double) h0 / height;
-
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				scaledImage[i][j] = image[(int)(i * heightScaleFactor)][(int)(j * widthScaleFactor)];
@@ -199,7 +198,7 @@ public class Runigram {
 	 * of the source image.
 	 */
 	public static void morph(Color[][] source, Color[][] target, int n) {
-		Color[][] scaledTarget = scaled(target, source.length, source[0].length); // Scales the target image to the dimensions of the source image.
+		Color[][] scaledTarget = scaled(target, source[0].length, source.length); // Scales the target image to the dimensions of the source image.
 		for (int i = 0; i <= n; i++) {
 			double alpha = (n - i) / (double) n; // Computes alpha by the formula : alpha = (n - i) / n
 			Color[][] currnetImage = blend(source, scaledTarget, alpha); // Creates the image in the i-th step
